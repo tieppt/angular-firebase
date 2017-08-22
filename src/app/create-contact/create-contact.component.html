@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="page-title">Create new contact</h2>
+  <p>Please fill form below</p>
+  <div class="row">
+    <form [formGroup]="cform" (ngSubmit)="onSubmit()" class="col-md-6 mr-auto ml-auto">
+      <div class="form-group">
+          <md-input-container class="full-width">
+              <input mdInput placeholder="Name" formControlName="name">
+              <md-hint align="end">Min length 5</md-hint>
+            </md-input-container>
+      </div>
+      <div class="form-group">
+          <md-input-container class="full-width">
+              <input mdInput placeholder="Job" formControlName="job">
+            </md-input-container>
+      </div>
+      <div class="form-group">
+          <md-input-container class="full-width">
+              <input mdInput placeholder="Email" formControlName="email">
+            </md-input-container>
+      </div>
+      <div class="form-group">
+        <button md-raised-button color="primary" type="submit" [disabled]="cform.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
